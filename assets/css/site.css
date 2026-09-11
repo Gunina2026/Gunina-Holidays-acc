@@ -38,6 +38,7 @@
 /* Unified travel imagery — real photography with consistent card cropping */
 .card-media{height:220px;overflow:hidden;background:#e9eef2;position:relative}
 .card-media img{display:block;width:100%;height:100%;object-fit:cover;object-position:center}
+.card-meta{margin:.55rem 0 0!important;font-size:.88rem!important;line-height:1.5;color:#52677a}.card-meta strong{color:#163247}
 .destination-card .card-media,.visa-card .card-media{height:220px}
 .card-media img{transition:transform .45s ease}
 .card:hover .card-media img{transform:scale(1.035)}

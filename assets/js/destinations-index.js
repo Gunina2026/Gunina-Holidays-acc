@@ -15,7 +15,7 @@
     const imageFor=d=>imageMap[d.name]||window.GUNINA_TRAVEL_IMAGES.fallback(d.name,d.region);
     function card(d){return `<article class="card destination-card" data-name="${escapeHtml(d.name.toLowerCase())}" data-region="${escapeHtml(d.region)}">
       <div class="card-media"><img loading="lazy" src="${escapeHtml(imageFor(d))}" alt="${escapeHtml(d.name)} travel destination" onerror="this.onerror=null;this.src='${escapeHtml(window.GUNINA_TRAVEL_IMAGES.fallback(d.name,d.region))}'></div>
-      <div class="card-body"><span class="eyebrow">${escapeHtml(d.region)}</span><h3>${escapeHtml(d.name)}</h3><p>${escapeHtml(d.description)}</p><a class="btn outline" href="destinations/${encodeURIComponent(d.slug)}.html">View Destination</a></div>
+      <div class="card-body"><span class="eyebrow">${escapeHtml(d.region)}</span><h3>${escapeHtml(d.name)}</h3><p>${escapeHtml(d.description)}</p><p class="card-meta"><strong>Popular places:</strong> ${escapeHtml((d.places||[]).slice(0,5).join(" · "))}</p><p class="card-meta"><strong>Suggested:</strong> ${escapeHtml(d.duration||"Customized to your trip")}</p><a class="btn outline" href="destinations/${encodeURIComponent(d.slug)}.html">View Destination</a></div>
     </article>`;}
     function render(){
       const q=(search?.value||"").trim().toLowerCase(), region=regionSelect?.value||"";
