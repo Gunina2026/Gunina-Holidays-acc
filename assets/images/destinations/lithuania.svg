@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 700" role="img" aria-labelledby="title desc">
+<title>Lithuania travel cover</title><desc>Gunina Holidays destination cover for Lithuania.</desc>
+<defs><linearGradient id="g" x1="0" x2="1" y1="0" y2="1"><stop offset="0" stop-color="#13283b"/><stop offset="1" stop-color="#7c3aed"/></linearGradient></defs>
+<rect width="1200" height="700" fill="url(#g)"/>
+<circle cx="1020" cy="130" r="180" fill="rgba(255,255,255,.08)"/><circle cx="1110" cy="560" r="260" fill="rgba(255,255,255,.06)"/>
+<path d="M0 560 C220 460 360 650 560 540 S920 430 1200 520 V700 H0Z" fill="rgba(255,255,255,.08)"/>
+<text x="70" y="85" font-family="Arial,Helvetica,sans-serif" font-size="18" letter-spacing="4" fill="#d9a441">GUNINA HOLIDAYS</text>
+<text x="70" y="195" font-family="Arial,Helvetica,sans-serif" font-size="52" font-weight="800" fill="#fff"><tspan x="70" dy="0">Lithuania</tspan></text>
+<text x="70" y="221" font-family="Arial,Helvetica,sans-serif" font-size="17" fill="#cfe3ee">Europe • Destination Highlights</text>
+<text x="70" y="255" font-family="Arial,Helvetica,sans-serif" font-size="20" fill="#e5eef6">Vilnius</text><text x="70" y="286" font-family="Arial,Helvetica,sans-serif" font-size="20" fill="#e5eef6">Kaunas</text><text x="70" y="317" font-family="Arial,Helvetica,sans-serif" font-size="20" fill="#e5eef6">Trakai</text><text x="70" y="348" font-family="Arial,Helvetica,sans-serif" font-size="20" fill="#e5eef6">Klaipėda</text><text x="70" y="379" font-family="Arial,Helvetica,sans-serif" font-size="20" fill="#e5eef6">Curonian Spit</text>
+<text x="70" y="650" font-family="Arial,Helvetica,sans-serif" font-size="16" fill="#d9e2ea">Your Journey, Our Responsibility!</text>
+</svg>
