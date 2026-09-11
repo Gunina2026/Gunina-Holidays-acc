@@ -26,9 +26,6 @@
 .related-card{display:flex;flex-direction:column;gap:3px;padding:13px 0;border-bottom:1px solid var(--line)}
 .related-card small{color:var(--muted)}
 .side hr{border:0;border-top:1px solid var(--line);margin:24px 0}
-.visa-flag{height:150px;background:linear-gradient(135deg,var(--navy),var(--teal));display:flex;align-items:center;justify-content:center;color:#fff;font-size:44px;font-weight:900;letter-spacing:2px}
+.visa-cover{display:block;width:100%;height:150px;object-fit:cover}.visa-flag{height:150px;background:linear-gradient(135deg,var(--navy),var(--teal));display:flex;align-items:center;justify-content:center;color:#fff;font-size:44px;font-weight:900;letter-spacing:2px}
 @media(max-width:900px){.sticky-side{position:static}.destination-hero{min-height:500px}.detail-hero-content{padding-top:55px;padding-bottom:55px}}
 @media(max-width:560px){.destination-toolbar select{width:100%}.destination-hero{min-height:520px}.detail-cover{object-position:center}.detail-hero-overlay{background:linear-gradient(90deg,rgba(6,20,38,.90),rgba(6,20,38,.62))}}
-
-/* Gunina photo cards — image area only; all existing information remains intact. */
-.card-media{width:100%;height:190px;overflow:hidden;background:#eaf0f4}.card-media img{display:block;width:100%;height:100%;object-fit:cover}.card-facts{font-size:13px;color:var(--muted);line-height:1.55;margin-top:10px}.detail-cover{width:100%;max-height:520px;object-fit:cover;display:block;position:absolute;inset:0;z-index:0}.detail-hero{min-height:430px;overflow:hidden}.detail-hero>.container{z-index:2}

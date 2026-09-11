@@ -16,9 +16,10 @@
   const meta=document.querySelector('meta[name="description"]');
   if(meta) meta.content=`Plan a customized ${d.name} holiday with Gunina Holidays.`;
   const related=packages.filter(p=>p.destination===d.slug).slice(0,3);
+  const image=d.image.startsWith("http")?d.image:"../"+d.image;
   root.innerHTML=`
     <section class="detail-hero destination-hero">
-      <img class="detail-cover" data-travel-photo="${esc(d.name)}" src="${window.GUNINA_TRAVEL_IMAGES.fallback(d.name)}" alt="${esc(d.name)} destination cover">
+      <img class="detail-cover" src="${esc(image)}" alt="${esc(d.name)} destination cover" onerror="this.onerror=null;this.src='../assets/images/destinations/${d.slug}.svg'">
       <div class="detail-hero-overlay"></div>
       <div class="container detail-hero-content">
         <div class="crumb"><a href="../index.html">Home</a> › <a href="../destinations.html">Destinations</a> › ${esc(d.name)}</div>
@@ -54,5 +55,4 @@
         </aside>
       </div>
     </main>`;
-  window.GUNINA_TRAVEL_IMAGES.wireImages(root);
 })();

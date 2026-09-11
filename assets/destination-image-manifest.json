@@ -1,722 +1,482 @@
 [
   {
-    "destination": "Albania",
     "slug": "albania",
-    "image": "assets/images/destinations/albania.svg",
-    "type": "local-branded-svg-fallback"
+    "image": "assets/images/destinations/albania.svg"
   },
   {
-    "destination": "Argentina",
     "slug": "argentina",
-    "image": "assets/images/destinations/argentina.svg",
-    "type": "local-branded-svg-fallback"
+    "image": "assets/images/destinations/argentina.svg"
   },
   {
-    "destination": "Armenia",
     "slug": "armenia",
-    "image": "assets/images/destinations/armenia.svg",
-    "type": "local-branded-svg-fallback"
+    "image": "assets/images/destinations/armenia.svg"
   },
   {
-    "destination": "Australia",
     "slug": "australia",
-    "image": "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?auto=format&fit=crop&w=1200&q=80",
-    "type": "curated-external-photo"
+    "image": "assets/images/destinations/australia.svg"
   },
   {
-    "destination": "Austria",
     "slug": "austria",
-    "image": "assets/images/destinations/austria.svg",
-    "type": "local-branded-svg-fallback"
+    "image": "assets/images/destinations/austria.svg"
   },
   {
-    "destination": "Azerbaijan",
     "slug": "azerbaijan",
-    "image": "assets/images/destinations/azerbaijan.svg",
-    "type": "local-branded-svg-fallback"
+    "image": "assets/images/destinations/azerbaijan.svg"
   },
   {
-    "destination": "Bahamas",
     "slug": "bahamas",
-    "image": "assets/images/destinations/bahamas.svg",
-    "type": "local-branded-svg-fallback"
+    "image": "assets/images/destinations/bahamas.svg"
   },
   {
-    "destination": "Bali / Indonesia",
     "slug": "bali",
-    "image": "https://images.unsplash.com/photo-1537996194471-e657df975ab4?auto=format&fit=crop&w=1200&q=80",
-    "type": "curated-external-photo"
+    "image": "assets/images/destinations/bali.svg"
   },
   {
-    "destination": "Balkan Europe",
     "slug": "balkan-europe",
-    "image": "assets/images/destinations/balkan-europe.svg",
-    "type": "local-branded-svg-fallback"
+    "image": "assets/images/destinations/balkan-europe.svg"
   },
   {
-    "destination": "Belgium & Luxembourg",
     "slug": "belgium-luxembourg",
-    "image": "assets/images/destinations/belgium-luxembourg.svg",
-    "type": "local-branded-svg-fallback"
+    "image": "assets/images/destinations/belgium-luxembourg.svg"
   },
   {
-    "destination": "Belgium",
     "slug": "belgium",
-    "image": "assets/images/destinations/belgium.svg",
-    "type": "local-branded-svg-fallback"
+    "image": "assets/images/destinations/belgium.svg"
   },
   {
-    "destination": "Bhutan",
     "slug": "bhutan",
-    "image": "assets/images/destinations/bhutan.svg",
-    "type": "local-branded-svg-fallback"
+    "image": "assets/images/destinations/bhutan.svg"
   },
   {
-    "destination": "Bosnia & Herzegovina",
     "slug": "bosnia-herzegovina",
-    "image": "assets/images/destinations/bosnia-herzegovina.svg",
-    "type": "local-branded-svg-fallback"
+    "image": "assets/images/destinations/bosnia-herzegovina.svg"
   },
   {
-    "destination": "Botswana",
     "slug": "botswana",
-    "image": "assets/images/destinations/botswana.svg",
-    "type": "local-branded-svg-fallback"
+    "image": "assets/images/destinations/botswana.svg"
   },
   {
-    "destination": "Brazil",
     "slug": "brazil",
-    "image": "assets/images/destinations/brazil.svg",
-    "type": "local-branded-svg-fallback"
+    "image": "assets/images/destinations/brazil.svg"
   },
   {
-    "destination": "Bulgaria",
     "slug": "bulgaria",
-    "image": "assets/images/destinations/bulgaria.svg",
-    "type": "local-branded-svg-fallback"
+    "image": "assets/images/destinations/bulgaria.svg"
   },
   {
-    "destination": "Cambodia",
     "slug": "cambodia",
-    "image": "assets/images/destinations/cambodia.svg",
-    "type": "local-branded-svg-fallback"
+    "image": "assets/images/destinations/cambodia.svg"
   },
   {
-    "destination": "Canada",
     "slug": "canada",
-    "image": "https://images.unsplash.com/photo-1503614472-8c93d56e92ce?auto=format&fit=crop&w=1200&q=80",
-    "type": "curated-external-photo"
+    "image": "assets/images/destinations/canada.svg"
   },
   {
-    "destination": "Central Europe",
     "slug": "central-europe",
-    "image": "assets/images/destinations/central-europe.svg",
-    "type": "local-branded-svg-fallback"
+    "image": "assets/images/destinations/central-europe.svg"
   },
   {
-    "destination": "Chile",
     "slug": "chile",
-    "image": "assets/images/destinations/chile.svg",
-    "type": "local-branded-svg-fallback"
+    "image": "assets/images/destinations/chile.svg"
   },
   {
-    "destination": "China",
     "slug": "china",
-    "image": "assets/images/destinations/china.svg",
-    "type": "local-branded-svg-fallback"
+    "image": "assets/images/destinations/china.svg"
   },
   {
-    "destination": "Costa Rica",
     "slug": "costa-rica",
-    "image": "assets/images/destinations/costa-rica.svg",
-    "type": "local-branded-svg-fallback"
+    "image": "assets/images/destinations/costa-rica.svg"
   },
   {
-    "destination": "Croatia",
     "slug": "croatia",
-    "image": "assets/images/destinations/croatia.svg",
-    "type": "local-branded-svg-fallback"
+    "image": "assets/images/destinations/croatia.svg"
   },
   {
-    "destination": "Cyprus",
     "slug": "cyprus",
-    "image": "assets/images/destinations/cyprus.svg",
-    "type": "local-branded-svg-fallback"
+    "image": "assets/images/destinations/cyprus.svg"
   },
   {
-    "destination": "Czech Republic",
     "slug": "czech-republic",
-    "image": "assets/images/destinations/czech-republic.svg",
-    "type": "local-branded-svg-fallback"
+    "image": "assets/images/destinations/czech-republic.svg"
   },
   {
-    "destination": "Denmark",
     "slug": "denmark",
-    "image": "assets/images/destinations/denmark.svg",
-    "type": "local-branded-svg-fallback"
+    "image": "assets/images/destinations/denmark.svg"
   },
   {
-    "destination": "Dominican Republic",
     "slug": "dominican-republic",
-    "image": "assets/images/destinations/dominican-republic.svg",
-    "type": "local-branded-svg-fallback"
+    "image": "assets/images/destinations/dominican-republic.svg"
   },
   {
-    "destination": "Dubai / UAE",
     "slug": "dubai",
-    "image": "https://images.unsplash.com/photo-1512453979798-5ea266f8880c?auto=format&fit=crop&w=1200&q=80",
-    "type": "curated-external-photo"
+    "image": "assets/images/destinations/dubai.svg"
   },
   {
-    "destination": "East Asia",
     "slug": "east-asia",
-    "image": "assets/images/destinations/east-asia.svg",
-    "type": "local-branded-svg-fallback"
+    "image": "assets/images/destinations/east-asia.svg"
   },
   {
-    "destination": "Egypt",
     "slug": "egypt",
-    "image": "https://images.unsplash.com/photo-1600520611035-84157ad4084d?auto=format&fit=crop&w=1200&q=80",
-    "type": "curated-external-photo"
+    "image": "assets/images/destinations/egypt.svg"
   },
   {
-    "destination": "Estonia",
     "slug": "estonia",
-    "image": "assets/images/destinations/estonia.svg",
-    "type": "local-branded-svg-fallback"
+    "image": "assets/images/destinations/estonia.svg"
   },
   {
-    "destination": "European Capitals",
     "slug": "european-capitals",
-    "image": "assets/images/destinations/european-capitals.svg",
-    "type": "local-branded-svg-fallback"
+    "image": "assets/images/destinations/european-capitals.svg"
   },
   {
-    "destination": "Fiji",
     "slug": "fiji",
-    "image": "assets/images/destinations/fiji.svg",
-    "type": "local-branded-svg-fallback"
+    "image": "assets/images/destinations/fiji.svg"
   },
   {
-    "destination": "Finland",
     "slug": "finland",
-    "image": "assets/images/destinations/finland.svg",
-    "type": "local-branded-svg-fallback"
+    "image": "assets/images/destinations/finland.svg"
   },
   {
-    "destination": "France",
     "slug": "france",
-    "image": "https://images.unsplash.com/photo-1502602898657-3e91760cbb34?auto=format&fit=crop&w=1200&q=80",
-    "type": "curated-external-photo"
+    "image": "assets/images/destinations/france.svg"
   },
   {
-    "destination": "Gabon",
     "slug": "gabon",
-    "image": "assets/images/destinations/gabon.svg",
-    "type": "local-branded-svg-fallback"
+    "image": "assets/images/destinations/gabon.svg"
   },
   {
-    "destination": "Georgia",
     "slug": "georgia",
-    "image": "assets/images/destinations/georgia.svg",
-    "type": "local-branded-svg-fallback"
+    "image": "assets/images/destinations/georgia.svg"
   },
   {
-    "destination": "Germany",
     "slug": "germany",
-    "image": "assets/images/destinations/germany.svg",
-    "type": "local-branded-svg-fallback"
+    "image": "assets/images/destinations/germany.svg"
   },
   {
-    "destination": "Ghana",
     "slug": "ghana",
-    "image": "assets/images/destinations/ghana.svg",
-    "type": "local-branded-svg-fallback"
+    "image": "assets/images/destinations/ghana.svg"
   },
   {
-    "destination": "Greece",
     "slug": "greece",
-    "image": "https://images.unsplash.com/photo-1603565816030-6b389eeb23cb?auto=format&fit=crop&w=1200&q=80",
-    "type": "curated-external-photo"
+    "image": "assets/images/destinations/greece.svg"
   },
   {
-    "destination": "Hong Kong",
     "slug": "hong-kong",
-    "image": "assets/images/destinations/hong-kong.svg",
-    "type": "local-branded-svg-fallback"
+    "image": "assets/images/destinations/hong-kong.svg"
   },
   {
-    "destination": "Hungary",
     "slug": "hungary",
-    "image": "assets/images/destinations/hungary.svg",
-    "type": "local-branded-svg-fallback"
+    "image": "assets/images/destinations/hungary.svg"
   },
   {
-    "destination": "Iceland",
     "slug": "iceland",
-    "image": "assets/images/destinations/iceland.svg",
-    "type": "local-branded-svg-fallback"
+    "image": "assets/images/destinations/iceland.svg"
   },
   {
-    "destination": "Indonesia",
     "slug": "indonesia",
-    "image": "assets/images/destinations/indonesia.svg",
-    "type": "local-branded-svg-fallback"
+    "image": "assets/images/destinations/indonesia.svg"
   },
   {
-    "destination": "Ireland",
     "slug": "ireland",
-    "image": "assets/images/destinations/ireland.svg",
-    "type": "local-branded-svg-fallback"
+    "image": "assets/images/destinations/ireland.svg"
   },
   {
-    "destination": "Israel",
     "slug": "israel",
-    "image": "assets/images/destinations/israel.svg",
-    "type": "local-branded-svg-fallback"
+    "image": "assets/images/destinations/israel.svg"
   },
   {
-    "destination": "Italy",
     "slug": "italy",
-    "image": "https://images.unsplash.com/photo-1529260830199-42c24126f198?auto=format&fit=crop&w=1200&q=80",
-    "type": "curated-external-photo"
+    "image": "assets/images/destinations/italy.svg"
   },
   {
-    "destination": "Jamaica",
     "slug": "jamaica",
-    "image": "assets/images/destinations/jamaica.svg",
-    "type": "local-branded-svg-fallback"
+    "image": "assets/images/destinations/jamaica.svg"
   },
   {
-    "destination": "Japan Alps",
     "slug": "japan-alps",
-    "image": "assets/images/destinations/japan-alps.svg",
-    "type": "local-branded-svg-fallback"
+    "image": "assets/images/destinations/japan-alps.svg"
   },
   {
-    "destination": "Japan",
     "slug": "japan",
-    "image": "https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?auto=format&fit=crop&w=1200&q=80",
-    "type": "curated-external-photo"
+    "image": "assets/images/destinations/japan.svg"
   },
   {
-    "destination": "Jordan",
     "slug": "jordan",
-    "image": "assets/images/destinations/jordan.svg",
-    "type": "local-branded-svg-fallback"
+    "image": "assets/images/destinations/jordan.svg"
   },
   {
-    "destination": "Kazakhstan",
     "slug": "kazakhstan",
-    "image": "assets/images/destinations/kazakhstan.svg",
-    "type": "local-branded-svg-fallback"
+    "image": "assets/images/destinations/kazakhstan.svg"
   },
   {
-    "destination": "Kenya",
     "slug": "kenya",
-    "image": "assets/images/destinations/kenya.svg",
-    "type": "local-branded-svg-fallback"
+    "image": "assets/images/destinations/kenya.svg"
   },
   {
-    "destination": "Kyrgyzstan",
     "slug": "kyrgyzstan",
-    "image": "assets/images/destinations/kyrgyzstan.svg",
-    "type": "local-branded-svg-fallback"
+    "image": "assets/images/destinations/kyrgyzstan.svg"
   },
   {
-    "destination": "Laos",
     "slug": "laos",
-    "image": "assets/images/destinations/laos.svg",
-    "type": "local-branded-svg-fallback"
+    "image": "assets/images/destinations/laos.svg"
   },
   {
-    "destination": "Latvia",
     "slug": "latvia",
-    "image": "assets/images/destinations/latvia.svg",
-    "type": "local-branded-svg-fallback"
+    "image": "assets/images/destinations/latvia.svg"
   },
   {
-    "destination": "Lithuania",
     "slug": "lithuania",
-    "image": "assets/images/destinations/lithuania.svg",
-    "type": "local-branded-svg-fallback"
+    "image": "assets/images/destinations/lithuania.svg"
   },
   {
-    "destination": "Luxembourg",
     "slug": "luxembourg",
-    "image": "assets/images/destinations/luxembourg.svg",
-    "type": "local-branded-svg-fallback"
+    "image": "assets/images/destinations/luxembourg.svg"
   },
   {
-    "destination": "Macau",
     "slug": "macau",
-    "image": "assets/images/destinations/macau.svg",
-    "type": "local-branded-svg-fallback"
+    "image": "assets/images/destinations/macau.svg"
   },
   {
-    "destination": "Madagascar",
     "slug": "madagascar",
-    "image": "assets/images/destinations/madagascar.svg",
-    "type": "local-branded-svg-fallback"
+    "image": "assets/images/destinations/madagascar.svg"
   },
   {
-    "destination": "Malawi",
     "slug": "malawi",
-    "image": "assets/images/destinations/malawi.svg",
-    "type": "local-branded-svg-fallback"
+    "image": "assets/images/destinations/malawi.svg"
   },
   {
-    "destination": "Malaysia",
     "slug": "malaysia",
-    "image": "https://images.unsplash.com/photo-1596422846543-75c6fc197f07?auto=format&fit=crop&w=1200&q=80",
-    "type": "curated-external-photo"
+    "image": "assets/images/destinations/malaysia.svg"
   },
   {
-    "destination": "Maldives",
     "slug": "maldives",
-    "image": "https://images.unsplash.com/photo-1514282401047-d79a71a590e8?auto=format&fit=crop&w=1200&q=80",
-    "type": "curated-external-photo"
+    "image": "assets/images/destinations/maldives.svg"
   },
   {
-    "destination": "Malta",
     "slug": "malta",
-    "image": "assets/images/destinations/malta.svg",
-    "type": "local-branded-svg-fallback"
+    "image": "assets/images/destinations/malta.svg"
   },
   {
-    "destination": "Mauritius & Réunion",
     "slug": "mauritius-reunion",
-    "image": "assets/images/destinations/mauritius-reunion.svg",
-    "type": "local-branded-svg-fallback"
+    "image": "assets/images/destinations/mauritius-reunion.svg"
   },
   {
-    "destination": "Mauritius",
     "slug": "mauritius",
-    "image": "https://images.unsplash.com/photo-1548013146-72479768bada?auto=format&fit=crop&w=1200&q=80",
-    "type": "curated-external-photo"
+    "image": "assets/images/destinations/mauritius.svg"
   },
   {
-    "destination": "Mexico",
     "slug": "mexico",
-    "image": "assets/images/destinations/mexico.svg",
-    "type": "local-branded-svg-fallback"
+    "image": "assets/images/destinations/mexico.svg"
   },
   {
-    "destination": "Monaco",
     "slug": "monaco",
-    "image": "assets/images/destinations/monaco.svg",
-    "type": "local-branded-svg-fallback"
+    "image": "assets/images/destinations/monaco.svg"
   },
   {
-    "destination": "Mongolia",
     "slug": "mongolia",
-    "image": "assets/images/destinations/mongolia.svg",
-    "type": "local-branded-svg-fallback"
+    "image": "assets/images/destinations/mongolia.svg"
   },
   {
-    "destination": "Montenegro",
     "slug": "montenegro",
-    "image": "assets/images/destinations/montenegro.svg",
-    "type": "local-branded-svg-fallback"
+    "image": "assets/images/destinations/montenegro.svg"
   },
   {
-    "destination": "Morocco",
     "slug": "morocco",
-    "image": "assets/images/destinations/morocco.svg",
-    "type": "local-branded-svg-fallback"
+    "image": "assets/images/destinations/morocco.svg"
   },
   {
-    "destination": "Mozambique",
     "slug": "mozambique",
-    "image": "assets/images/destinations/mozambique.svg",
-    "type": "local-branded-svg-fallback"
+    "image": "assets/images/destinations/mozambique.svg"
   },
   {
-    "destination": "Myanmar",
     "slug": "myanmar",
-    "image": "assets/images/destinations/myanmar.svg",
-    "type": "local-branded-svg-fallback"
+    "image": "assets/images/destinations/myanmar.svg"
   },
   {
-    "destination": "Namibia",
     "slug": "namibia",
-    "image": "assets/images/destinations/namibia.svg",
-    "type": "local-branded-svg-fallback"
+    "image": "assets/images/destinations/namibia.svg"
   },
   {
-    "destination": "Nepal",
     "slug": "nepal",
-    "image": "assets/images/destinations/nepal.svg",
-    "type": "local-branded-svg-fallback"
+    "image": "assets/images/destinations/nepal.svg"
   },
   {
-    "destination": "Netherlands Tulip Route",
     "slug": "netherlands-tulip",
-    "image": "assets/images/destinations/netherlands-tulip.svg",
-    "type": "local-branded-svg-fallback"
+    "image": "assets/images/destinations/netherlands-tulip.svg"
   },
   {
-    "destination": "Netherlands",
     "slug": "netherlands",
-    "image": "assets/images/destinations/netherlands.svg",
-    "type": "local-branded-svg-fallback"
+    "image": "assets/images/destinations/netherlands.svg"
   },
   {
-    "destination": "New Zealand",
     "slug": "new-zealand",
-    "image": "https://images.unsplash.com/photo-1469521669194-babb45599def?auto=format&fit=crop&w=1200&q=80",
-    "type": "curated-external-photo"
+    "image": "assets/images/destinations/new-zealand.svg"
   },
   {
-    "destination": "Nordic Countries",
     "slug": "nordic-countries",
-    "image": "assets/images/destinations/nordic-countries.svg",
-    "type": "local-branded-svg-fallback"
+    "image": "assets/images/destinations/nordic-countries.svg"
   },
   {
-    "destination": "North Macedonia",
     "slug": "north-macedonia",
-    "image": "assets/images/destinations/north-macedonia.svg",
-    "type": "local-branded-svg-fallback"
+    "image": "assets/images/destinations/north-macedonia.svg"
   },
   {
-    "destination": "Norway",
     "slug": "norway",
-    "image": "assets/images/destinations/norway.svg",
-    "type": "local-branded-svg-fallback"
+    "image": "assets/images/destinations/norway.svg"
   },
   {
-    "destination": "Oman",
     "slug": "oman",
-    "image": "assets/images/destinations/oman.svg",
-    "type": "local-branded-svg-fallback"
+    "image": "assets/images/destinations/oman.svg"
   },
   {
-    "destination": "Panama",
     "slug": "panama",
-    "image": "assets/images/destinations/panama.svg",
-    "type": "local-branded-svg-fallback"
+    "image": "assets/images/destinations/panama.svg"
   },
   {
-    "destination": "Peru",
     "slug": "peru",
-    "image": "assets/images/destinations/peru.svg",
-    "type": "local-branded-svg-fallback"
+    "image": "assets/images/destinations/peru.svg"
   },
   {
-    "destination": "Philippines",
     "slug": "philippines",
-    "image": "assets/images/destinations/philippines.svg",
-    "type": "local-branded-svg-fallback"
+    "image": "assets/images/destinations/philippines.svg"
   },
   {
-    "destination": "Poland",
     "slug": "poland",
-    "image": "assets/images/destinations/poland.svg",
-    "type": "local-branded-svg-fallback"
+    "image": "assets/images/destinations/poland.svg"
   },
   {
-    "destination": "Portugal",
     "slug": "portugal",
-    "image": "assets/images/destinations/portugal.svg",
-    "type": "local-branded-svg-fallback"
+    "image": "assets/images/destinations/portugal.svg"
   },
   {
-    "destination": "Qatar",
     "slug": "qatar",
-    "image": "assets/images/destinations/qatar.svg",
-    "type": "local-branded-svg-fallback"
+    "image": "assets/images/destinations/qatar.svg"
   },
   {
-    "destination": "Romania",
     "slug": "romania",
-    "image": "assets/images/destinations/romania.svg",
-    "type": "local-branded-svg-fallback"
+    "image": "assets/images/destinations/romania.svg"
   },
   {
-    "destination": "Rwanda",
     "slug": "rwanda",
-    "image": "assets/images/destinations/rwanda.svg",
-    "type": "local-branded-svg-fallback"
+    "image": "assets/images/destinations/rwanda.svg"
   },
   {
-    "destination": "Samoa",
     "slug": "samoa",
-    "image": "assets/images/destinations/samoa.svg",
-    "type": "local-branded-svg-fallback"
+    "image": "assets/images/destinations/samoa.svg"
   },
   {
-    "destination": "Saudi Arabia",
     "slug": "saudi-arabia",
-    "image": "assets/images/destinations/saudi-arabia.svg",
-    "type": "local-branded-svg-fallback"
+    "image": "assets/images/destinations/saudi-arabia.svg"
   },
   {
-    "destination": "Scotland",
     "slug": "scotland",
-    "image": "assets/images/destinations/scotland.svg",
-    "type": "local-branded-svg-fallback"
+    "image": "assets/images/destinations/scotland.svg"
   },
   {
-    "destination": "Senegal",
     "slug": "senegal",
-    "image": "assets/images/destinations/senegal.svg",
-    "type": "local-branded-svg-fallback"
+    "image": "assets/images/destinations/senegal.svg"
   },
   {
-    "destination": "Serbia",
     "slug": "serbia",
-    "image": "assets/images/destinations/serbia.svg",
-    "type": "local-branded-svg-fallback"
+    "image": "assets/images/destinations/serbia.svg"
   },
   {
-    "destination": "Seychelles",
     "slug": "seychelles",
-    "image": "assets/images/destinations/seychelles.svg",
-    "type": "local-branded-svg-fallback"
+    "image": "assets/images/destinations/seychelles.svg"
   },
   {
-    "destination": "Singapore",
     "slug": "singapore",
-    "image": "https://images.unsplash.com/photo-1525625293386-3f8f99389edd?auto=format&fit=crop&w=1200&q=80",
-    "type": "curated-external-photo"
+    "image": "assets/images/destinations/singapore.svg"
   },
   {
-    "destination": "Slovakia",
     "slug": "slovakia",
-    "image": "assets/images/destinations/slovakia.svg",
-    "type": "local-branded-svg-fallback"
+    "image": "assets/images/destinations/slovakia.svg"
   },
   {
-    "destination": "Slovenia Alps",
     "slug": "slovenia-alps",
-    "image": "assets/images/destinations/slovenia-alps.svg",
-    "type": "local-branded-svg-fallback"
+    "image": "assets/images/destinations/slovenia-alps.svg"
   },
   {
-    "destination": "Slovenia",
     "slug": "slovenia",
-    "image": "assets/images/destinations/slovenia.svg",
-    "type": "local-branded-svg-fallback"
+    "image": "assets/images/destinations/slovenia.svg"
   },
   {
-    "destination": "South Africa",
     "slug": "south-africa",
-    "image": "assets/images/destinations/south-africa.svg",
-    "type": "local-branded-svg-fallback"
+    "image": "assets/images/destinations/south-africa.svg"
   },
   {
-    "destination": "South Korea",
     "slug": "south-korea",
-    "image": "assets/images/destinations/south-korea.svg",
-    "type": "local-branded-svg-fallback"
+    "image": "assets/images/destinations/south-korea.svg"
   },
   {
-    "destination": "Southeast Asia",
     "slug": "southeast-asia",
-    "image": "assets/images/destinations/southeast-asia.svg",
-    "type": "local-branded-svg-fallback"
+    "image": "assets/images/destinations/southeast-asia.svg"
   },
   {
-    "destination": "Spain",
     "slug": "spain",
-    "image": "assets/images/destinations/spain.svg",
-    "type": "local-branded-svg-fallback"
+    "image": "assets/images/destinations/spain.svg"
   },
   {
-    "destination": "Sri Lanka",
     "slug": "sri-lanka",
-    "image": "https://images.unsplash.com/photo-1711389552655-9230667c6338?auto=format&fit=crop&w=1200&q=80",
-    "type": "curated-external-photo"
+    "image": "assets/images/destinations/sri-lanka.svg"
   },
   {
-    "destination": "Sweden",
     "slug": "sweden",
-    "image": "assets/images/destinations/sweden.svg",
-    "type": "local-branded-svg-fallback"
+    "image": "assets/images/destinations/sweden.svg"
   },
   {
-    "destination": "Switzerland Alps",
     "slug": "switzerland-alps",
-    "image": "assets/images/destinations/switzerland-alps.svg",
-    "type": "local-branded-svg-fallback"
+    "image": "assets/images/destinations/switzerland-alps.svg"
   },
   {
-    "destination": "Switzerland",
     "slug": "switzerland",
-    "image": "assets/images/destinations/switzerland.svg",
-    "type": "local-branded-svg-fallback"
+    "image": "assets/images/destinations/switzerland.svg"
   },
   {
-    "destination": "Taiwan",
     "slug": "taiwan",
-    "image": "assets/images/destinations/taiwan.svg",
-    "type": "local-branded-svg-fallback"
+    "image": "assets/images/destinations/taiwan.svg"
   },
   {
-    "destination": "Tanzania",
     "slug": "tanzania",
-    "image": "assets/images/destinations/tanzania.svg",
-    "type": "local-branded-svg-fallback"
+    "image": "assets/images/destinations/tanzania.svg"
   },
   {
-    "destination": "Thailand",
     "slug": "thailand",
-    "image": "https://images.unsplash.com/photo-1528181304800-259b08848526?auto=format&fit=crop&w=1200&q=80",
-    "type": "curated-external-photo"
+    "image": "assets/images/destinations/thailand.svg"
   },
   {
-    "destination": "Tunisia",
     "slug": "tunisia",
-    "image": "assets/images/destinations/tunisia.svg",
-    "type": "local-branded-svg-fallback"
+    "image": "assets/images/destinations/tunisia.svg"
   },
   {
-    "destination": "Turkey",
     "slug": "turkey",
-    "image": "https://images.unsplash.com/photo-1524231757912-21f4fe3a7200?auto=format&fit=crop&w=1200&q=80",
-    "type": "curated-external-photo"
+    "image": "assets/images/destinations/turkey.svg"
   },
   {
-    "destination": "Uganda",
     "slug": "uganda",
-    "image": "assets/images/destinations/uganda.svg",
-    "type": "local-branded-svg-fallback"
+    "image": "assets/images/destinations/uganda.svg"
   },
   {
-    "destination": "United Kingdom",
     "slug": "united-kingdom",
-    "image": "assets/images/destinations/united-kingdom.svg",
-    "type": "local-branded-svg-fallback"
+    "image": "assets/images/destinations/united-kingdom.svg"
   },
   {
-    "destination": "USA",
     "slug": "usa",
-    "image": "https://images.unsplash.com/photo-1485738422979-f5c462d49f74?auto=format&fit=crop&w=1200&q=80",
-    "type": "curated-external-photo"
+    "image": "assets/images/destinations/usa.svg"
   },
   {
-    "destination": "Uzbekistan",
     "slug": "uzbekistan",
-    "image": "assets/images/destinations/uzbekistan.svg",
-    "type": "local-branded-svg-fallback"
+    "image": "assets/images/destinations/uzbekistan.svg"
   },
   {
-    "destination": "Vietnam",
     "slug": "vietnam",
-    "image": "https://images.unsplash.com/photo-1528127269322-539801943592?auto=format&fit=crop&w=1200&q=80",
-    "type": "curated-external-photo"
+    "image": "assets/images/destinations/vietnam.svg"
   },
   {
-    "destination": "Zambia",
     "slug": "zambia",
-    "image": "assets/images/destinations/zambia.svg",
-    "type": "local-branded-svg-fallback"
+    "image": "assets/images/destinations/zambia.svg"
   },
   {
-    "destination": "Zimbabwe",
     "slug": "zimbabwe",
-    "image": "assets/images/destinations/zimbabwe.svg",
-    "type": "local-branded-svg-fallback"
+    "image": "assets/images/destinations/zimbabwe.svg"
   }
 ]
