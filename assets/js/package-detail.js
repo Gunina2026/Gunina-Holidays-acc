@@ -1,6 +1,7 @@
 /* Gunina Holidays — holiday package detail renderer */
 (function(){
   "use strict";
+  async function init(){
   const data=window.GUNINA_PACKAGES||[];
   const root=document.getElementById("packageDetail");
   if(!root) return;
@@ -13,12 +14,13 @@
     root.innerHTML=`<div class="notice"><strong>Package not found.</strong><br><a class="btn outline" href="../packages.html">Back to Holiday Packages</a></div>`;
     return;
   }
+  if(d) await window.GUNINA_TRAVEL_IMAGES.resolveMany([d]);
   document.title=`${p.title} | Gunina Holidays`;
-  const img=d?(d.image.startsWith("http")?d.image:"../"+d.image):"../assets/images/destinations/european-capitals.svg";
+  const img=d?window.GUNINA_TRAVEL_IMAGES.get(d.name,d.region,d.image):window.GUNINA_TRAVEL_IMAGES.fallback("world","Asia");
   const destinationLink=d?`../destinations/${d.slug}.html`:`../destinations.html`;
   root.innerHTML=`
     <section class="detail-hero destination-hero">
-      <img class="detail-cover" src="${esc(img)}" alt="${esc(p.title)}" onerror="this.onerror=null;this.src='../assets/images/destinations/${esc(d?.slug||"european-capitals")}.svg'">
+      <img class="detail-cover" src="${esc(img)}" alt="${esc(p.title)}" onerror="this.onerror=null;this.src='${esc(window.GUNINA_TRAVEL_IMAGES.fallback(d?.name||"world",d?.region||"Asia"))}'">
       <div class="detail-hero-overlay"></div>
       <div class="container detail-hero-content">
         <div class="crumb"><a href="../index.html">Home</a> › <a href="../packages.html">Holiday Packages</a> › ${esc(p.title)}</div>
@@ -50,4 +52,6 @@
         </aside>
       </div>
     </main>`;
+  }
+  document.readyState==="loading"?document.addEventListener("DOMContentLoaded",init):init();
 })();
