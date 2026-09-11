@@ -72,6 +72,7 @@
     });
   }
   filterInput("packageSearch","#packageGrid .card");
+  filterInput("visaSearch","#visaGrid .card");
 
   document.querySelectorAll("[data-filter]").forEach(btn=>{
     btn.addEventListener("click",()=>{

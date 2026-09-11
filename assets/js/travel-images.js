@@ -1,100 +1,121 @@
-/* Gunina Holidays — unified travel image system
- * Replaces placeholder SVG covers with real travel imagery where available.
- * Images are sourced at runtime from Wikimedia's public API; no API key is required.
- */
+/* Gunina Holidays — reliable destination photo resolver
+   Keeps the existing destination/visa information untouched.
+   Every card gets a real travel photograph immediately via a stable keyword
+   photo fallback, then upgrades to a more specific Wikimedia Commons/Wikipedia
+   photo when the browser can reach the public API. */
 (function(){
   "use strict";
-  const API="https://en.wikipedia.org/w/api.php";
-  const GENERIC="https://images.unsplash.com/photo-1603565816030-6b389eeb23cb?auto=format&fit=crop&w=1400&q=82";
-  const FALLBACKS={
-    "Europe":"https://images.unsplash.com/photo-1502602898657-3e91760cbb34?auto=format&fit=crop&w=1400&q=82",
-    "Asia":"https://images.unsplash.com/photo-1528181304800-259b08848526?auto=format&fit=crop&w=1400&q=82",
-    "East Asia":"https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?auto=format&fit=crop&w=1400&q=82",
-    "South Asia":"https://images.unsplash.com/photo-1711389552655-9230667c6338?auto=format&fit=crop&w=1400&q=82",
-    "Southeast Asia":"https://images.unsplash.com/photo-1596422846543-75c6fc197f07?auto=format&fit=crop&w=1400&q=82",
-    "Middle East":"https://images.unsplash.com/photo-1512453979798-5ea266f8880c?auto=format&fit=crop&w=1400&q=82",
-    "Africa":"https://images.unsplash.com/photo-1548013146-72479768bada?auto=format&fit=crop&w=1400&q=82",
-    "Americas":"https://images.unsplash.com/photo-1485738422979-f5c462d49f74?auto=format&fit=crop&w=1400&q=82",
-    "Oceania":"https://images.unsplash.com/photo-1469521669194-babb45599def?auto=format&fit=crop&w=1400&q=82",
-    "Caucasus & Central Asia":"https://images.unsplash.com/photo-1603565816030-6b389eeb23cb?auto=format&fit=crop&w=1400&q=82"
-  };
-  const alias={
-    "Bali / Indonesia":"Bali", "Dubai / UAE":"Dubai", "USA":"United States",
-    "UK":"United Kingdom", "United States of America":"United States",
-    "Türkiye":"Turkey", "Czech Republic":"Czech Republic", "South Korea":"South Korea",
-    "Vietnam":"Vietnam", "Laos":"Laos", "UAE":"United Arab Emirates",
-    "Côte d’Ivoire":"Ivory Coast", "Cabo Verde":"Cape Verde",
-    "Congo, Democratic Republic of the":"Democratic Republic of the Congo",
-    "Congo, Republic of the":"Republic of the Congo", "Eswatini":"Eswatini",
-    "Micronesia":"Federated States of Micronesia", "Palestine":"State of Palestine",
-    "Vatican City":"Vatican City"
-  };
-  const cache={};
-  try{Object.assign(cache,JSON.parse(sessionStorage.getItem("guninaTravelImages")||"{}"));}catch(e){}
-  const save=()=>{try{sessionStorage.setItem("guninaTravelImages",JSON.stringify(cache));}catch(e){}};
 
-  function clean(v){ return String(v||"").replace(/\s+/g," ").trim(); }
-  function titleFor(name){ const n=clean(name); return alias[n]||n; }
-  function sourceIsPhoto(src){
-    if(!src) return false;
-    const s=src.toLowerCase();
-    if(/\.(svg)(\?|$)/.test(s)) return false;
-    if(/flag_of_|flag-|coat_of_arms|logo|map_of_|location_map/.test(s)) return false;
-    return /\.(jpg|jpeg|png|webp)(\?|$)/.test(s) || s.includes("thumb.wikimedia.org");
+  const cacheKey="gunina-photo-cache-v4";
+  const memory={};
+  const aliases={
+    "Bali / Indonesia":"Bali Indonesia tourism",
+    "Dubai / UAE":"Dubai United Arab Emirates tourism",
+    "Turkey":"Türkiye tourism",
+    "Türkiye":"Türkiye tourism",
+    "USA":"United States tourism",
+    "United Kingdom":"United Kingdom tourism",
+    "New Zealand":"New Zealand tourism",
+    "South Korea":"South Korea tourism",
+    "North Macedonia":"North Macedonia tourism",
+    "Bosnia & Herzegovina":"Bosnia and Herzegovina tourism",
+    "Czech Republic":"Czechia tourism",
+    "Belgium & Luxembourg":"Belgium Luxembourg tourism",
+    "Mauritius & Reunion":"Mauritius Réunion tourism",
+    "Mauritius / Reunion":"Mauritius Réunion tourism",
+    "European Capitals":"European capitals travel",
+    "Balkan Europe":"Balkans Europe tourism",
+    "Central Europe":"Central Europe tourism",
+    "East Asia":"East Asia tourism",
+    "Southeast Asia":"Southeast Asia tourism",
+    "Japan Alps":"Japanese Alps tourism",
+    "Nordic Countries":"Nordic countries tourism",
+    "Slovenia Alps":"Slovenian Alps tourism",
+    "Netherlands Tulip":"Netherlands tulip tourism"
+  };
+
+  function clean(v){
+    return String(v||"").replace(/[\/#?&%]+/g," ").replace(/\s+/g," ").trim();
+  }
+  function queryName(name){
+    const n=clean(name);
+    return aliases[n] || (n + " tourism");
+  }
+  function hash(s){
+    let h=2166136261;
+    for(let i=0;i<s.length;i++){ h^=s.charCodeAt(i); h=Math.imul(h,16777619); }
+    return (h>>>0);
+  }
+  function fallback(name){
+    const q=encodeURIComponent(queryName(name)+",travel,landmark");
+    return `https://loremflickr.com/1200/800/${q}?lock=${hash(name)}`;
+  }
+  function loadCache(){
+    try{return JSON.parse(sessionStorage.getItem(cacheKey)||"{}")}catch(e){return {}}
+  }
+  const stored=loadCache();
+  Object.keys(stored).forEach(k=>memory[k]=stored[k]);
+
+  function saveCache(){
+    try{sessionStorage.setItem(cacheKey,JSON.stringify(memory))}catch(e){}
   }
 
-  async function fetchBatch(names){
-    const unique=[...new Set(names.map(clean).filter(Boolean))];
-    const need=unique.filter(n=>!cache[n]);
-    if(!need.length) return cache;
-    // 25 countries x 2 candidate pages = 50 titles per request.
-    for(let i=0;i<need.length;i+=25){
-      const part=need.slice(i,i+25);
-      const titles=[];
-      part.forEach(n=>{ const t=titleFor(n); titles.push("Tourism in "+t,t); });
-      const params=new URLSearchParams({action:"query",format:"json",origin:"*",prop:"pageimages",piprop:"thumbnail",pithumbsize:"1400",titles:titles.join("|")});
-      try{
-        const r=await fetch(API+"?"+params.toString(),{mode:"cors",credentials:"omit"});
-        if(!r.ok) throw new Error("image API "+r.status);
-        const j=await r.json();
-        const pages=Object.values(j?.query?.pages||{});
-        for(const n of part){
-          const target=titleFor(n);
-          const candidates=pages.filter(p=>p.thumbnail?.source && (p.title===`Tourism in ${target}` || p.title===target));
-          // Prefer a real travel thumbnail from the Tourism article.
-          let hit=candidates.find(p=>p.title===`Tourism in ${target}` && sourceIsPhoto(p.thumbnail.source));
-          if(!hit) hit=candidates.find(p=>sourceIsPhoto(p.thumbnail.source));
-          cache[n]=hit?.thumbnail?.source||null;
-        }
-      }catch(e){
-        // Leave unresolved names null; the deterministic fallbacks below keep every card visual.
-        part.forEach(n=>{if(!(n in cache)) cache[n]=null;});
-      }
+  async function wikiPhoto(name){
+    const title=encodeURIComponent(queryName(name));
+    const url=`https://en.wikipedia.org/w/api.php?action=query&format=json&origin=*&prop=pageimages&piprop=thumbnail&pithumbsize=1200&redirects=1&titles=${title}`;
+    const r=await fetch(url,{mode:"cors",credentials:"omit"});
+    if(!r.ok) throw new Error("wiki request failed");
+    const j=await r.json();
+    const pages=j?.query?.pages||{};
+    const page=Object.values(pages)[0];
+    const src=page?.thumbnail?.source||"";
+    if(!src || /\.svg(?:[?#]|$)/i.test(src)) throw new Error("no usable photo");
+    return src;
+  }
+
+  function setImage(img,name,url){
+    if(!img || !url) return;
+    img.dataset.travelPhotoName=name;
+    img.src=url;
+    img.loading="lazy";
+    img.decoding="async";
+    img.referrerPolicy="no-referrer";
+    img.onerror=function(){
+      if(this.dataset.photoFallbackUsed==="1") return;
+      this.dataset.photoFallbackUsed="1";
+      this.src=fallback(name);
+    };
+  }
+
+  async function resolve(name){
+    const key=clean(name);
+    if(!key) return "";
+    if(memory[key]) return memory[key];
+    const fb=fallback(key);
+    try{
+      const src=await wikiPhoto(key);
+      memory[key]=src; saveCache();
+      return src;
+    }catch(e){
+      memory[key]=fb; saveCache();
+      return fb;
     }
-    save();
-    return cache;
   }
 
-  function fallback(name,region){
-    return FALLBACKS[region]||GENERIC;
-  }
-
-  async function resolve(items){
-    const names=items.map(x=>typeof x==="string"?x:(x.name||x.country||x.slug||""));
-    await fetchBatch(names);
-    const out={};
-    items.forEach(item=>{
-      const name=typeof item==="string"?item:(item.name||item.country||item.slug||"");
-      const region=typeof item==="object"?item.region:"";
-      out[name]=cache[name]||fallback(name,region);
+  function wireImages(root){
+    (root||document).querySelectorAll("img[data-travel-photo]").forEach(async img=>{
+      const name=img.getAttribute("data-travel-photo");
+      const immediate=memory[name]||fallback(name);
+      setImage(img,name,immediate);
+      const better=await resolve(name);
+      if(better && better!==img.src) setImage(img,name,better);
     });
-    return out;
   }
 
   window.GUNINA_TRAVEL_IMAGES={
-    resolveMany:resolve,
     fallback,
-    get(name,region,current){ return cache[name]||((current&&/^https?:\/\//i.test(current))?current:fallback(name,region)); },
-    preload:fetchBatch
+    resolve,
+    setImage,
+    wireImages
   };
 })();

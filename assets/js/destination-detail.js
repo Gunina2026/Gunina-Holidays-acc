@@ -1,7 +1,6 @@
 /* Gunina Holidays — destination detail renderer */
 (function(){
   "use strict";
-  async function init(){
   const data=window.GUNINA_DESTINATIONS||[];
   const packages=window.GUNINA_PACKAGES||[];
   const root=document.getElementById("destinationDetail");
@@ -13,15 +12,13 @@
     root.innerHTML=`<div class="notice"><strong>Destination not found.</strong><br><a class="btn outline" href="../destinations.html">Back to Destinations</a></div>`;
     return;
   }
-  await window.GUNINA_TRAVEL_IMAGES.resolveMany([d]);
   document.title=`${d.name} | Gunina Holidays`;
   const meta=document.querySelector('meta[name="description"]');
   if(meta) meta.content=`Plan a customized ${d.name} holiday with Gunina Holidays.`;
   const related=packages.filter(p=>p.destination===d.slug).slice(0,3);
-  const image=window.GUNINA_TRAVEL_IMAGES.get(d.name,d.region,d.image);
   root.innerHTML=`
     <section class="detail-hero destination-hero">
-      <img class="detail-cover" src="${esc(image)}" alt="${esc(d.name)} destination cover" onerror="this.onerror=null;this.src='${esc(window.GUNINA_TRAVEL_IMAGES.fallback(d.name,d.region))}'">
+      <img class="detail-cover" data-travel-photo="${esc(d.name)}" src="${window.GUNINA_TRAVEL_IMAGES.fallback(d.name)}" alt="${esc(d.name)} destination cover">
       <div class="detail-hero-overlay"></div>
       <div class="container detail-hero-content">
         <div class="crumb"><a href="../index.html">Home</a> › <a href="../destinations.html">Destinations</a> › ${esc(d.name)}</div>
@@ -57,6 +54,5 @@
         </aside>
       </div>
     </main>`;
-  }
-  document.readyState==="loading"?document.addEventListener("DOMContentLoaded",init):init();
+  window.GUNINA_TRAVEL_IMAGES.wireImages(root);
 })();
