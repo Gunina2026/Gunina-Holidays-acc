@@ -2,7 +2,7 @@
 
 ## 1. Project audit
 
-The supplied ZIP was inspected before modification. It contains **120 destination HTML files**, **25 holiday package pages**, **193 visa-country pages**, 7 guide pages, 6 service pages and the main site pages. The project is a static GitHub Pages site; there is no backend/database.
+The supplied ZIP was inspected before modification and then corrected with a minimal compatibility-focused patch. It contains **120 destination HTML files**, **25 holiday package pages**, **193 visa-country pages**, 7 guide pages, 6 service pages and the main site pages. The project is a static GitHub Pages site; there is no backend/database.
 
 The original project did **not contain any local image files**. Destination pages referenced remote Unsplash images, and many of the 120 destination pages reused the same generic Unsplash image. The referenced `gunina-holidays-logo.png` was also not present inside the supplied ZIP.
 
@@ -200,3 +200,14 @@ Then upload the updated project and verify:
 
 ## Logo update
 The supplied Gunina Holidays logo has been added as `gunina-holidays-logo.png` at the project root. Inner pages use depth-correct relative paths so the same logo works on GitHub Pages and the custom domain. The supplied image was trimmed only for surrounding blank margins; the logo artwork itself is unchanged.
+
+
+## 12. Final correction pass
+
+The final correction pass also fixes:
+- destination region selector initialization order (prevents a JavaScript ReferenceError);
+- destination no-results message;
+- visa search aliases such as USA, UK, UAE/Dubai and common country-name variants;
+- visa no-results message;
+- visa catalogue card visuals (country-specific local SVG covers);
+- redundant visa filtering in the shared script so the master visa renderer remains the single owner of the catalogue filter.

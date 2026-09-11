@@ -8,12 +8,12 @@
   const count=document.getElementById("destinationCount");
   const regionSelect=document.getElementById("destinationRegion");
   const regions=[...new Set(data.map(d=>d.region))].sort();
+  const escapeHtml=s=>String(s??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;","'":"&#39;"}[c]));
 
   if(regionSelect){
     regionSelect.innerHTML='<option value="">All regions</option>'+regions.map(r=>`<option value="${escapeHtml(r)}">${escapeHtml(r)}</option>`).join("");
   }
 
-  const escapeHtml=s=>String(s).replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
   const imagePath=d=>d.image.startsWith("http")?d.image:d.image;
   function card(d){
     return `<article class="card destination-card" data-name="${escapeHtml(d.name.toLowerCase())}" data-region="${escapeHtml(d.region)}">
@@ -33,7 +33,7 @@
       (!q || [d.name,d.country,d.region,...d.places].join(" ").toLowerCase().includes(q)) &&
       (!region || d.region===region)
     );
-    grid.innerHTML=filtered.map(card).join("");
+    grid.innerHTML=filtered.length ? filtered.map(card).join("") : `<div class="notice no-results"><strong>No destinations found.</strong> Try another destination.</div>`;
     if(count) count.textContent=`${filtered.length} of ${data.length} destinations`;
   }
   search?.addEventListener("input",render);
