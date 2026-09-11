@@ -1,16 +1,87 @@
+/* Gunina Holidays — shared site interactions */
 (function(){
- const menu=document.querySelector('.menu'), nav=document.querySelector('.navlinks');
- if(menu&&nav) menu.addEventListener('click',()=>{nav.classList.toggle('open')});
- const DESTS=[{"name": "Japan", "slug": "japan"}, {"name": "Dubai / UAE", "slug": "dubai"}, {"name": "Malaysia", "slug": "malaysia"}, {"name": "Singapore", "slug": "singapore"}, {"name": "Thailand", "slug": "thailand"}, {"name": "Bali / Indonesia", "slug": "bali"}, {"name": "Vietnam", "slug": "vietnam"}, {"name": "Turkey", "slug": "turkey"}, {"name": "Switzerland", "slug": "switzerland"}, {"name": "France", "slug": "france"}, {"name": "Italy", "slug": "italy"}, {"name": "Australia", "slug": "australia"}, {"name": "New Zealand", "slug": "new-zealand"}, {"name": "USA", "slug": "usa"}, {"name": "Canada", "slug": "canada"}, {"name": "Egypt", "slug": "egypt"}, {"name": "Mauritius", "slug": "mauritius"}, {"name": "Maldives", "slug": "maldives"}, {"name": "Sri Lanka", "slug": "sri-lanka"}, {"name": "Greece", "slug": "greece"}, {"name": "Spain", "slug": "spain"}, {"name": "Portugal", "slug": "portugal"}, {"name": "Germany", "slug": "germany"}, {"name": "Austria", "slug": "austria"}, {"name": "Netherlands", "slug": "netherlands"}, {"name": "Belgium", "slug": "belgium"}, {"name": "Norway", "slug": "norway"}, {"name": "Sweden", "slug": "sweden"}, {"name": "Denmark", "slug": "denmark"}, {"name": "Finland", "slug": "finland"}, {"name": "Iceland", "slug": "iceland"}, {"name": "Ireland", "slug": "ireland"}, {"name": "United Kingdom", "slug": "united-kingdom"}, {"name": "Scotland", "slug": "scotland"}, {"name": "Czech Republic", "slug": "czech-republic"}, {"name": "Hungary", "slug": "hungary"}, {"name": "Poland", "slug": "poland"}, {"name": "Croatia", "slug": "croatia"}, {"name": "Slovenia", "slug": "slovenia"}, {"name": "Slovakia", "slug": "slovakia"}, {"name": "Romania", "slug": "romania"}, {"name": "Bulgaria", "slug": "bulgaria"}, {"name": "Switzerland Alps", "slug": "switzerland-alps"}, {"name": "Belgium & Luxembourg", "slug": "belgium-luxembourg"}, {"name": "Luxembourg", "slug": "luxembourg"}, {"name": "Monaco", "slug": "monaco"}, {"name": "Malta", "slug": "malta"}, {"name": "Cyprus", "slug": "cyprus"}, {"name": "Georgia", "slug": "georgia"}, {"name": "Armenia", "slug": "armenia"}, {"name": "Azerbaijan", "slug": "azerbaijan"}, {"name": "Kazakhstan", "slug": "kazakhstan"}, {"name": "Uzbekistan", "slug": "uzbekistan"}, {"name": "Kyrgyzstan", "slug": "kyrgyzstan"}, {"name": "Oman", "slug": "oman"}, {"name": "Qatar", "slug": "qatar"}, {"name": "Saudi Arabia", "slug": "saudi-arabia"}, {"name": "Jordan", "slug": "jordan"}, {"name": "Israel", "slug": "israel"}, {"name": "South Korea", "slug": "south-korea"}, {"name": "China", "slug": "china"}, {"name": "Hong Kong", "slug": "hong-kong"}, {"name": "Macau", "slug": "macau"}, {"name": "Philippines", "slug": "philippines"}, {"name": "Indonesia", "slug": "indonesia"}, {"name": "Cambodia", "slug": "cambodia"}, {"name": "Laos", "slug": "laos"}, {"name": "Myanmar", "slug": "myanmar"}, {"name": "Nepal", "slug": "nepal"}, {"name": "Bhutan", "slug": "bhutan"}, {"name": "Seychelles", "slug": "seychelles"}, {"name": "South Africa", "slug": "south-africa"}, {"name": "Kenya", "slug": "kenya"}, {"name": "Tanzania", "slug": "tanzania"}, {"name": "Morocco", "slug": "morocco"}, {"name": "Tunisia", "slug": "tunisia"}, {"name": "Mauritius & Réunion", "slug": "mauritius-reunion"}, {"name": "Brazil", "slug": "brazil"}, {"name": "Argentina", "slug": "argentina"}, {"name": "Chile", "slug": "chile"}, {"name": "Peru", "slug": "peru"}, {"name": "Mexico", "slug": "mexico"}, {"name": "Costa Rica", "slug": "costa-rica"}, {"name": "Panama", "slug": "panama"}, {"name": "Dominican Republic", "slug": "dominican-republic"}, {"name": "Bahamas", "slug": "bahamas"}, {"name": "Jamaica", "slug": "jamaica"}, {"name": "Fiji", "slug": "fiji"}, {"name": "Mozambique", "slug": "mozambique"}, {"name": "Samoa", "slug": "samoa"}, {"name": "Japan Alps", "slug": "japan-alps"}, {"name": "Taiwan", "slug": "taiwan"}, {"name": "Mongolia", "slug": "mongolia"}, {"name": "Madagascar", "slug": "madagascar"}, {"name": "Rwanda", "slug": "rwanda"}, {"name": "Uganda", "slug": "uganda"}, {"name": "Namibia", "slug": "namibia"}, {"name": "Botswana", "slug": "botswana"}, {"name": "Zambia", "slug": "zambia"}, {"name": "Zimbabwe", "slug": "zimbabwe"}, {"name": "Albania", "slug": "albania"}, {"name": "Montenegro", "slug": "montenegro"}, {"name": "Bosnia & Herzegovina", "slug": "bosnia-herzegovina"}, {"name": "Serbia", "slug": "serbia"}, {"name": "North Macedonia", "slug": "north-macedonia"}, {"name": "Lithuania", "slug": "lithuania"}, {"name": "Latvia", "slug": "latvia"}, {"name": "Estonia", "slug": "estonia"}, {"name": "Slovenia Alps", "slug": "slovenia-alps"}, {"name": "Netherlands Tulip Route", "slug": "netherlands-tulip"}, {"name": "European Capitals", "slug": "european-capitals"}, {"name": "Central Europe", "slug": "central-europe"}, {"name": "Nordic Countries", "slug": "nordic-countries"}, {"name": "Balkan Europe", "slug": "balkan-europe"}, {"name": "East Asia", "slug": "east-asia"}, {"name": "Southeast Asia", "slug": "southeast-asia"}, {"name": "Malawi", "slug": "malawi"}, {"name": "Ghana", "slug": "ghana"}, {"name": "Senegal", "slug": "senegal"}, {"name": "Gabon", "slug": "gabon"}];
- const slugify=s=>String(s).toLowerCase().replace(/&/g,'and').replace(/[^a-z0-9]+/g,'-').replace(/^-|-$/g,'');
- document.querySelectorAll('[data-search]').forEach(f=>f.addEventListener('submit',e=>{e.preventDefault();let q=f.querySelector('input').value.trim().toLowerCase();let found=DESTS.find(d=>d.name.toLowerCase()===q)||DESTS.find(d=>d.name.toLowerCase().includes(q))||DESTS.find(d=>d.name.toLowerCase().split(/\W+/).some(w=>w&&q.includes(w))); if(found) location.href='destinations/'+found.slug+'.html'; else location.href='destinations.html?search='+encodeURIComponent(q)}));
- const params=new URLSearchParams(location.search); const dest=params.get('destination'), pkg=params.get('package'), visa=params.get('visa'), service=params.get('service');
- const set=(id,v)=>{let el=document.getElementById(id);if(el&&v){el.value=v}};
- const prettify=s=>String(s||'').replace(/-/g,' ').replace(/\b\w/g,m=>m.toUpperCase());
- set('destination',dest?prettify(dest):''); set('package',pkg?prettify(pkg):''); set('visa',visa?prettify(visa):''); set('service',service?prettify(service):'');
- const title=document.getElementById('contextTitle'); if(title&&(dest||pkg||visa||service)) title.textContent='Enquiry for '+prettify(pkg||dest||visa||service);
- const form=document.getElementById('enquiryForm'); if(form)form.addEventListener('submit',async e=>{e.preventDefault();const msg=document.getElementById('formMessage');const btn=form.querySelector('button[type=submit]');btn.disabled=true;btn.textContent='Sending...';try{const r=await fetch('https://api.web3forms.com/submit',{method:'POST',body:new FormData(form)});const j=await r.json();if(j.success){msg.style.display='block';msg.textContent='Thank you! Your enquiry has been submitted successfully.';form.reset();set('destination',dest?prettify(dest):'');set('package',pkg?prettify(pkg):'');set('visa',visa?prettify(visa):'');set('service',service?prettify(service):'')}else throw new Error()}catch(err){msg.style.display='block';msg.textContent='Sorry, we could not submit your enquiry right now. Please call or WhatsApp us.'}btn.disabled=false;btn.textContent='Submit Enquiry'});
- function filterInput(id,selector){const el=document.getElementById(id); if(!el)return; el.addEventListener('input',()=>{const q=el.value.trim().toLowerCase();document.querySelectorAll(selector).forEach(c=>{c.style.display=c.textContent.toLowerCase().includes(q)?'block':'none'})})}
- filterInput('destinationSearch','#destinationGrid .card'); filterInput('packageSearch','#packageGrid .card'); filterInput('visaSearch','#visaGrid .card');
- document.querySelectorAll('[data-filter]').forEach(btn=>btn.addEventListener('click',()=>{document.querySelectorAll('[data-filter]').forEach(b=>b.classList.remove('active'));btn.classList.add('active');let val=btn.dataset.filter;document.querySelectorAll('[data-card]').forEach(c=>c.style.display=val==='all'||c.dataset.card===val?'block':'none')}));
+  "use strict";
+
+  const menu=document.querySelector(".menu"), nav=document.querySelector(".navlinks");
+  if(menu&&nav){
+    menu.addEventListener("click",()=>{
+      const open=nav.classList.toggle("open");
+      menu.setAttribute("aria-expanded",String(open));
+    });
+  }
+
+  const qs=new URLSearchParams(location.search);
+  const prettify=s=>String(s||"").replace(/[-_]+/g," ").replace(/\b\w/g,m=>m.toUpperCase());
+
+  function setValue(id,value){
+    const el=document.getElementById(id);
+    if(el && value) el.value=value;
+  }
+
+  // Enquiry context works from destination/package/visa/service CTAs.
+  const context={
+    destination:qs.get("destination")||"",
+    package:qs.get("package")||"",
+    visa:qs.get("visa")||"",
+    service:qs.get("service")||""
+  };
+  setValue("destination",prettify(context.destination));
+  setValue("package",prettify(context.package));
+  setValue("visa",prettify(context.visa));
+  setValue("service",prettify(context.service));
+
+  const title=document.getElementById("contextTitle");
+  const first=context.package||context.destination||context.visa||context.service;
+  if(title&&first) title.textContent="Enquiry for "+prettify(first);
+
+  const form=document.getElementById("enquiryForm");
+  if(form){
+    form.addEventListener("submit",async e=>{
+      e.preventDefault();
+      const msg=document.getElementById("formMessage");
+      const btn=form.querySelector('button[type="submit"]');
+      if(!btn) return;
+      btn.disabled=true; btn.textContent="Sending…";
+      try{
+        const r=await fetch("https://api.web3forms.com/submit",{method:"POST",body:new FormData(form)});
+        const j=await r.json();
+        if(!j.success) throw new Error("Web3Forms rejected the submission");
+        if(msg){msg.style.display="block";msg.textContent="Thank you! Your enquiry has been submitted successfully.";}
+        form.reset();
+        setValue("destination",prettify(context.destination));
+        setValue("package",prettify(context.package));
+        setValue("visa",prettify(context.visa));
+        setValue("service",prettify(context.service));
+      }catch(err){
+        if(msg){msg.style.display="block";msg.textContent="Sorry, we could not submit your enquiry right now. Please call or WhatsApp us.";}
+      }finally{
+        btn.disabled=false; btn.textContent="Submit Enquiry";
+      }
+    });
+  }
+
+  // Generic search/filter hooks used by the current static pages.
+  function filterInput(id,selector){
+    const el=document.getElementById(id);
+    if(!el) return;
+    el.addEventListener("input",()=>{
+      const q=el.value.trim().toLowerCase();
+      document.querySelectorAll(selector).forEach(card=>{
+        card.style.display=card.textContent.toLowerCase().includes(q)?"":"none";
+      });
+    });
+  }
+  filterInput("packageSearch","#packageGrid .card");
+  filterInput("visaSearch","#visaGrid .card");
+
+  document.querySelectorAll("[data-filter]").forEach(btn=>{
+    btn.addEventListener("click",()=>{
+      document.querySelectorAll("[data-filter]").forEach(b=>b.classList.remove("active"));
+      btn.classList.add("active");
+      const val=btn.dataset.filter;
+      document.querySelectorAll("[data-card]").forEach(card=>{
+        card.style.display=(val==="all"||card.dataset.card===val)?"":"none";
+      });
+    });
+  });
 })();

@@ -1,38 +1,18 @@
-GUNINA HOLIDAYS — COMPLETE MULTI-PAGE WEBSITE
+Gunina Holidays — Updated Static Website
 
-This build is designed for GitHub Pages and keeps Gunina Holidays branding, contact information and the existing Web3Forms enquiry system.
+See IMPLEMENTATION_REPORT.md for the complete architecture audit, changes, image system and deployment checklist.
 
-UPDATED CONTENT
-- 120 destination detail pages
-- 25 holiday package detail pages (5 existing concepts + 20 additional package options)
-- 193 country-specific visa pages: the common 195-country sovereign/UN+observer list excluding India and Pakistan
-- Dedicated service pages, travel guides, About, Contact, Terms and Privacy pages
-- Central enquiry page with destination/package/visa/service pre-filling from detail-page CTAs
-- Destination, package and visa search/filter controls
-- No informational card is designed to jump directly to the enquiry form; detail pages come first.
+The website is designed for GitHub Pages / static hosting.
 
-IMPORTANT FILES
-- index.html — homepage
-- destinations.html — 120 destinations
-- packages.html — 25 holiday packages
-- visa.html — 193 visa countries
-- enquiry.html — central enquiry form
-- assets/css/site.css — shared styling
-- assets/js/site.js — shared navigation, search, filtering and enquiry pre-fill
-- CNAME — keep this file for www.guninaholidays.in
-- gunina-holidays-logo.png — keep this logo in the website root
+Important:
+- Keep the real `gunina-holidays-logo.png` in the project root if you already have it.
+- `CNAME` is configured for `www.guninaholidays.in`.
+- Do not delete `assets/js/destinations-data.js`; it is the master destination source.
+- Do not manually maintain separate destination card data.
+- The enquiry form continues to use the existing Web3Forms integration.
 
-GITHUB PAGES
-Upload the contents of this folder to the root of your GitHub Pages repository. Do not upload the ZIP as a nested folder. Keep the directory structure intact.
-
-ENQUIRY FLOW
-Destination → destination detail → Enquire About Destination → enquiry.html with destination pre-filled
-Package → package detail → Enquire About This Package → enquiry.html with package/destination pre-filled
-Visa → visa detail → Get Visa Assistance → enquiry.html with visa pre-filled
-Service → service detail → Enquire Now → enquiry.html with service pre-filled
-
-NOTES
-- Visa information on these pages is general guidance only. Requirements, fees, processing times and decisions are controlled by the relevant embassy, consulate or immigration authority and may change.
-- Package pages are sample/customizable itineraries and should be finalized through a written quotation.
-- No customer statistics, awards or fake reviews have been added.
-- Destination and visa photography uses remote Unsplash image URLs; for maximum control and performance you can later replace them with optimized local images in assets/images.
+Master data:
+- 120 destinations: assets/js/destinations-data.js
+- 25 packages: assets/js/packages-data.js
+- 195 visa countries: assets/js/visa-data.js
+- Destination image manifest: assets/destination-image-manifest.json
