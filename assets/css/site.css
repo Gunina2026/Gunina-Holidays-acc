@@ -51,3 +51,20 @@
 @media(max-width:1100px){.nav .actions{display:none}.navlinks{gap:12px}}
 @media(max-width:768px){.hero-inner{padding-top:48px}.discovery-tabs a{padding:8px 10px;font-size:12px}.searchbox{width:100%}.grid{grid-template-columns:repeat(2,minmax(0,1fr))}.grid.four{grid-template-columns:repeat(2,minmax(0,1fr))}.section-head{align-items:flex-start;gap:16px;flex-wrap:wrap}}
 @media(max-width:540px){.grid,.grid.four{grid-template-columns:1fr}.card>img{height:220px}.destination-toolbar{display:flex;flex-direction:column;align-items:stretch}.hero.hero-slideshow{min-height:630px}.hero-inner h1{font-size:38px}}
+
+.stats-grid strong{font-size:clamp(20px,2.4vw,30px)}
+
+/* Brighter destination photographs and transparent homepage controls. */
+.card>img,.visa-cover,.detail-cover,.hero-slideshow .hero-slide{filter:brightness(1.08) contrast(1.02)}
+.detail-hero-overlay{background:linear-gradient(90deg,rgba(6,20,38,.36),rgba(6,20,38,.10) 60%,rgba(6,20,38,.02))}
+.detail-hero:not(.destination-hero)::before{background:rgba(8,36,61,.25)}
+.hero-slideshow h1,.hero-slideshow p,.hero-slideshow .eyebrow,.hero-slideshow .discovery-tabs a,.hero-slideshow .searchbox label,.detail-hero-content{color:#fff;text-shadow:0 2px 7px rgba(0,0,0,.8)}
+.hero-slideshow .discovery-tabs,.hero-slideshow .searchbox{background:transparent!important;box-shadow:none!important;backdrop-filter:none;border:0;padding-left:0;padding-right:0}
+.hero-slideshow .discovery-tabs a{background:transparent!important;border-bottom:2px solid transparent;border-radius:0}
+.hero-slideshow .discovery-tabs a:hover,.hero-slideshow .discovery-tabs a:focus-visible{border-bottom-color:#fff}
+.hero-slideshow .btn{background:transparent!important;border:1px solid rgba(255,255,255,.9);color:#fff!important;text-shadow:0 1px 5px #000;border-radius:12px}
+.hero-slideshow .btn:hover{border-width:2px;padding-left:19px;padding-right:19px}
+.hero-slideshow .searchbox input{display:block;width:100%;background:transparent!important;color:#fff;border:1px solid #fff;box-shadow:none;text-shadow:0 1px 5px #000;margin-top:8px}
+.hero-slideshow .searchbox input::placeholder{color:#fff;opacity:1}
+.hero-slideshow .btn:focus-visible,.hero-slideshow .searchbox input:focus-visible,.hero-slideshow .discovery-tabs a:focus-visible{outline:3px solid #fff;outline-offset:4px}
+@media(max-width:560px){.detail-hero-overlay{background:linear-gradient(90deg,rgba(6,20,38,.38),rgba(6,20,38,.12))}.hero-slideshow .discovery-tabs{gap:0}.hero-slideshow .searchbox{padding-top:12px}}

@@ -11,11 +11,11 @@
   function render(){
     const q=(search?.value||"").trim().toLowerCase();
     const list=data.filter(v=>!q||v.name.toLowerCase().includes(q));
-    grid.innerHTML=list.length ? list.map(v=>{ const d=destinations.find(x=>x.slug===v.slug); const image=d?.image||`assets/images/visa/${v.slug}.jpg`; return `<article class="card visa-card">
-      <img class="visa-cover" loading="lazy" src="${esc(image)}" alt="${esc(v.name)} visa assistance" onerror="this.onerror=null;this.src='assets/images/visa/${esc(v.slug)}.jpg'">
+    grid.innerHTML=list.length ? list.map(v=>{ const d=destinations.find(x=>x.slug===v.slug); const image=d?.image||`assets/images/destinations/${v.slug}.jpg`; return `<article class="card visa-card">
+      <img class="visa-cover" loading="lazy" src="${esc(image)}" alt="${esc(v.name)} visa assistance" onerror="this.onerror=null;this.src='assets/images/destinations/${esc(v.slug)}.jpg'">
       <div class="card-body"><span class="eyebrow">VISA ASSISTANCE</span><h3>${esc(v.name)}</h3><p>Country-specific documentation and application guidance, subject to current rules.</p><a class="btn outline" href="visa/${esc(v.slug)}.html">View Visa Details</a></div>
     </article>`; }).join("") : `<div class="empty-state"><strong>No visa destination found.</strong><span>Try another country name.</span></div>`;
-    if(count) count.textContent=`${list.length} of ${data.length} countries`;
+    if(count) count.textContent="";
   }
   search?.addEventListener("input",render);
   render();

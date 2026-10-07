@@ -40,7 +40,7 @@
     grid.innerHTML=filtered.length
       ? filtered.map(card).join("")
       : `<div class="empty-state"><strong>No destinations found.</strong><span>Try another country, city, place or region.</span></div>`;
-    if(count) count.textContent=`${filtered.length} of ${data.length} destinations`;
+    if(count) count.textContent="";
   }
   search?.addEventListener("input",render);
   regionSelect?.addEventListener("change",render);
