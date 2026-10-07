@@ -14,11 +14,11 @@
     return;
   }
   document.title=`${p.title} | Gunina Holidays`;
-  const img=d?(d.image.startsWith("http")?d.image:"../"+d.image):"../assets/images/destinations/european-capitals.svg";
+  const img=d?(d.image.startsWith("http")?d.image:"../"+d.image):"../assets/images/destinations/france.jpg";
   const destinationLink=d?`../destinations/${d.slug}.html`:`../destinations.html`;
   root.innerHTML=`
     <section class="detail-hero destination-hero">
-      <img class="detail-cover" src="${esc(img)}" alt="${esc(p.title)}" onerror="this.onerror=null;this.src='../assets/images/destinations/${esc(d?.slug||"european-capitals")}.svg'">
+      <img class="detail-cover" src="${esc(img)}" alt="${esc(p.title)}" onerror="this.onerror=null;this.src='../assets/images/destinations/${esc(d?.slug||"france")}.jpg'">
       <div class="detail-hero-overlay"></div>
       <div class="container detail-hero-content">
         <div class="crumb"><a href="../index.html">Home</a> › <a href="../packages.html">Holiday Packages</a> › ${esc(p.title)}</div>
@@ -33,7 +33,7 @@
         <div>
           <section><span class="eyebrow">PACKAGE OVERVIEW</span><h2>Why this package</h2><p>${esc(p.overview)}</p><p>Gunina Holidays can customize the route, hotel category, sightseeing, transfers and travel dates. No fixed price or availability is implied until the final quotation is confirmed.</p></section>
           <section><h2>Package Highlights</h2><div class="chips">${p.highlights.map(x=>`<span class="chip">${esc(x)}</span>`).join("")}</div></section>
-          <section id="package-itinerary"><h2>Day-by-Day Itinerary</h2>${p.itinerary.map(x=>`<div class="day"><strong>Day ${x.day} · ${esc(x.title)}</strong><p>${esc(x.description)}</p></div>`).join("")}</section>
+          <section id="package-itinerary"><h2>Suggested Route &amp; Stays</h2>${p.itinerary.map(x=>`<div class="day"><strong>Stage ${x.day} · ${esc(x.title)}</strong><p>${esc(x.description)}</p></div>`).join("")}</section>
           <section><h2>Accommodation</h2><p>${esc(p.accommodation)}</p></section>
           <section><h2>Transportation</h2><p>${esc(p.transport)}</p></section>
           <section><h2>Inclusions</h2><ul class="check-list">${p.inclusions.map(x=>`<li>${esc(x)}</li>`).join("")}</ul></section>

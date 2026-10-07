@@ -1,27 +1,38 @@
-Gunina Holidays — Updated Static Website
+GUNINA HOLIDAYS — 30 INTERNATIONAL COUNTRIES
 
-See IMPLEMENTATION_REPORT.md for the complete architecture audit, changes, image system and deployment checklist.
+Upload the CONTENTS of this folder to the root of your website repository. Replace the old assets, destinations, packages and visa folders in full; old country files should be removed. Keep CNAME for your existing domain. No build command is needed.
 
-The website is designed for GitHub Pages / static hosting.
+All destination photos are bundled locally. Holiday ideas are customised quotations, not live inventory. Existing contact details and enquiry integration are preserved. Test an enquiry after publishing.
 
-Important:
-- Keep the real `gunina-holidays-logo.png` in the project root if you already have it.
-- `CNAME` is configured for `www.guninaholidays.in`.
-- Do not delete `assets/js/destinations-data.js`; it is the master destination source.
-- Do not manually maintain separate destination card data.
-- The enquiry form continues to use the existing Web3Forms integration.
-
-Master data:
-- 120 destinations: assets/js/destinations-data.js
-- 25 packages: assets/js/packages-data.js
-- 195 visa countries: assets/js/visa-data.js
-- Destination image manifest: assets/destination-image-manifest.json
-
-
-REPAIR BUILD v3 (2026-09-15)
-- Fixed the destination catalogue JavaScript initialization bug that prevented destination cards from rendering.
-- Kept all 120 destination records and local SVG destination artwork.
-- Added country-specific local visa cover artwork for visa countries without a matching destination image, avoiding blank/repeated fallback imagery.
-- Hardened mobile navigation, active navigation states, homepage destination search routing, image fallbacks and empty-search states.
-- Added GitHub Pages 404.html.
-- Verified local HTML asset references and JavaScript syntax.
+Countries:
+Japan
+Thailand
+Singapore
+Malaysia
+Indonesia
+Vietnam
+China
+South Korea
+Maldives
+Sri Lanka
+United Arab Emirates
+Turkey
+Portugal
+Morocco
+France
+Switzerland
+Norway
+Spain
+Philippines
+Poland
+Netherlands
+Tanzania
+Oman
+New Zealand
+United States
+Sweden
+Qatar
+South Africa
+Mauritius
+Seychelles
+Checks passed: local links, country/photo matching, catalogue searches and JavaScript syntax. Mobile CSS added; visual browser verification was unavailable. Visa pages contain general assistance information; country-specific eligibility, fees and current processing times must be checked before quoting.

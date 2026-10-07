@@ -9,9 +9,9 @@
   const esc=s=>String(s??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
   function card(p){
     const d=destinations.find(x=>x.slug===p.destination);
-    const image=d?.image||"assets/images/destinations/european-capitals.svg";
+    const image=d?.image||"assets/images/destinations/france.jpg";
     return `<article class="card">
-      <img loading="lazy" src="${esc(image)}" alt="${esc(p.title)}" onerror="this.onerror=null;this.src='assets/images/destinations/${esc(d?.slug||"european-capitals")}.svg'">
+      <img loading="lazy" src="${esc(image)}" alt="${esc(p.title)}" onerror="this.onerror=null;this.src='assets/images/destinations/${esc(d?.slug||"france")}.jpg'">
       <div class="card-body"><span class="eyebrow">${esc(p.duration)}</span><h3>${esc(p.title)}</h3><p>${esc(p.overview)}</p><a class="btn outline" href="packages/${esc(p.slug)}.html">View Package</a></div>
     </article>`;
   }

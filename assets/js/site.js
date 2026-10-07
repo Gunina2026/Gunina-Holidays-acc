@@ -15,11 +15,11 @@
   const current=(location.pathname.split("/").pop()||"index.html").toLowerCase();
   document.querySelectorAll(".navlinks a").forEach(a=>{
     const href=(a.getAttribute("href")||"").split("?")[0].split("#")[0].toLowerCase();
-    const section=current.startsWith("destinations/")?"destinations.html":
-                  current.startsWith("packages/")?"packages.html":
-                  current.startsWith("visa/")?"visa.html":
+    const section=location.pathname.includes("/destinations/")?"destinations.html":
+                  location.pathname.includes("/packages/")?"packages.html":
+                  location.pathname.includes("/visa/")?"visa.html":
                   current.startsWith("services/")?"services.html":current;
-    if(href===section || (current==="" && href==="index.html")){
+    if(href.replace(/^\.\.\//,"")===section || (current==="" && href==="index.html")){
       a.classList.add("active");
       a.setAttribute("aria-current","page");
     }
@@ -101,8 +101,8 @@
       });
     });
   }
-  filterInput("packageSearch","#packageGrid .card");
-  filterInput("visaSearch","#visaGrid .card");
+
+
 
   document.querySelectorAll("[data-filter]").forEach(btn=>{
     btn.addEventListener("click",()=>{

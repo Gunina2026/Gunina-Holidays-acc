@@ -17,8 +17,8 @@
   }
 
   function card(d){
-    const image=escapeHtml(d.image||`assets/images/destinations/${d.slug}.svg`);
-    const fallback=escapeHtml(`assets/images/destinations/${d.slug}.svg`);
+    const image=escapeHtml(d.image||`assets/images/destinations/${d.slug}.jpg`);
+    const fallback=escapeHtml(`assets/images/destinations/${d.slug}.jpg`);
     return `<article class="card destination-card" data-name="${escapeHtml(String(d.name||"").toLowerCase())}" data-region="${escapeHtml(d.region||"")}">
       <img loading="lazy" src="${image}" alt="${escapeHtml(d.name)} travel destination" onerror="this.onerror=null;this.src='${fallback}'">
       <div class="card-body">
