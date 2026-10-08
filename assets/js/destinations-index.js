@@ -7,6 +7,7 @@
   const search=document.getElementById("destinationSearch");
   const count=document.getElementById("destinationCount");
   const regionSelect=document.getElementById("destinationRegion");
+  const initialRegion=new URLSearchParams(location.search).get("region");
   const initialSearch=new URLSearchParams(location.search).get("search");
   if(search && initialSearch) search.value=initialSearch;
   const escapeHtml=s=>String(s??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
@@ -16,6 +17,7 @@
     regionSelect.innerHTML='<option value="">All regions</option>'+regions.map(r=>`<option value="${escapeHtml(r)}">${escapeHtml(r)}</option>`).join("");
   }
 
+  if(regionSelect && regions.includes(initialRegion)) regionSelect.value=initialRegion;
   function card(d){
     const image=escapeHtml(d.image||`assets/images/destinations/${d.slug}.jpg`);
     const fallback=escapeHtml(`assets/images/destinations/${d.slug}.jpg`);
@@ -24,6 +26,7 @@
       <div class="card-body">
         <span class="eyebrow">${escapeHtml(d.region||"Destination")}</span>
         <h3>${escapeHtml(d.name)}</h3>
+        <p class="destination-places">${(d.places||[]).map(escapeHtml).join(" · ")}</p>
         <p>${escapeHtml(d.description||"Plan a customized journey with Gunina Holidays.")}</p>
         <a class="btn outline" href="destinations/${encodeURIComponent(d.slug)}.html">View Destination</a>
       </div>
@@ -38,7 +41,7 @@
       return (!q||hay.includes(q))&&(!region||d.region===region);
     });
     grid.innerHTML=filtered.length
-      ? filtered.map(card).join("")
+      ? regions.filter(r=>filtered.some(d=>d.region===r)).map(r=>`<section class="region-group"><h2>${escapeHtml(r)}</h2><div class="grid">${filtered.filter(d=>d.region===r).map(card).join("")}</div></section>`).join("")
       : `<div class="empty-state"><strong>No destinations found.</strong><span>Try another country, city, place or region.</span></div>`;
     if(count) count.textContent="";
   }
