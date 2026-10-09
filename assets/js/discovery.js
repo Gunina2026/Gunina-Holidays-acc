@@ -1,5 +1,0 @@
-document.addEventListener('DOMContentLoaded',()=>{
- const ds=window.GUNINA_DESTINATIONS||[], ps=window.GUNINA_PACKAGES||[];
- const list=document.getElementById('countryOptions');if(list) ds.forEach(d=>{let o=document.createElement('option');o.value=d.name;list.append(o)});
- const grid=document.getElementById('featuredPackageGrid');if(grid) ps.filter(p=>['japan','uae','switzerland','indonesia','singapore','maldives'].includes(p.destination)).forEach(p=>{const d=ds.find(d=>d.slug===p.destination);const card=document.createElement('article');card.className='card';const img=document.createElement('img');img.src=d.image;img.alt=d.name;img.loading='lazy';const body=document.createElement('div');body.className='card-body';const eyebrow=document.createElement('span');eyebrow.className='eyebrow';eyebrow.textContent=p.duration;const title=document.createElement('h3');title.textContent=p.title;const text=document.createElement('p');text.textContent=d.description;const a=document.createElement('a');a.href='packages/'+p.slug+'.html';a.className='btn outline';a.textContent='Explore holiday';body.append(eyebrow,title,text,a);card.append(img,body);grid.append(card)});
-});
