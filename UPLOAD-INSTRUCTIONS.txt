@@ -1,0 +1,11 @@
+Gunina Holidays - Updated Visa Purpose Selector
+
+Upload the extracted contents of this ZIP into your existing website repository root. Merge folders and replace matching files. Keep index.html, app.js, data.js, style.css, visa-purpose.js and visa-checklists.js at the root. Also upload the visa and checklists folders. Refresh with Ctrl+F5 after deployment.
+
+Visa Assistance: choose a destination and purpose of travel, view the preparation checklist and download the matching purpose-specific PDF. Includes 20 travel purposes across the 30 existing destination cards. Selected purpose is carried to enquiry notes.
+
+These are general purpose-specific preparation guides used across destinations, not verified country-specific embassy checklists. Nationality, residence, duration and exact visa category determine final requirements. Category labels are travel purposes and do not imply a route is available in every country.
+
+Retains 5-second hero crossfade, menu and card hover effects and text lift / colour effects.
+
+Validated: 600 destination-purpose combinations, PDF paths, enquiry selection, checklist ticks/reset, JavaScript syntax, and PDF page counts. Browser rendering was not tested.

@@ -2,3 +2,34 @@
 
 .brand img{height:76px;width:185px}.footer-brand{display:inline-block;background:#faf8f2;border-radius:6px;padding:10px 16px}.footer-brand img{width:210px;height:auto;display:block}.hero-bottom>div{display:flex;gap:3px}.slide{padding:8px 9px}.hero-bottom{align-items:center;gap:20px}@media(max-width:650px){.brand img{height:65px;width:155px}.hero-bottom{flex-direction:column;align-items:start;gap:12px}.hero-bottom>div{width:100%;justify-content:space-between}.slide{padding:6px}.footer-brand img{width:180px}}
 .footer-brand{background:transparent;padding:0}.footer-brand img{filter:brightness(0) invert(1)}
+
+
+
+.hero>img{position:absolute;inset:0;display:block}.hero>img.hero-incoming{opacity:0;transition:opacity .9s ease-in-out;pointer-events:none}.hero>img.hero-incoming.visible{opacity:1}@media(prefers-reduced-motion:reduce){.hero>img.hero-incoming{transition:none}}
+
+
+
+
+
+/* Navigation, card lift and accessible checklist controls */
+nav a{display:inline-block;transition:transform .2s ease,color .2s ease,background-color .2s ease,box-shadow .2s ease}
+nav a:focus-visible{color:#276b59;transform:translateY(-3px) scale(1.04)}
+nav a.button:focus-visible{color:var(--ink);background:var(--accent)}
+.destination-card,.service-card,.visa-card,.service-row>a,.attractions article{position:relative;border-radius:6px;transition:transform .24s ease,box-shadow .24s ease}
+.visa-card{background:white;overflow:hidden}.visa-card>img{width:100%;height:240px;object-fit:cover}.visa-card>div{padding:22px}.visa-card h3{font:28px Georgia,serif;margin:8px 0}.visa-card small{font-size:10px;letter-spacing:1.6px}
+.checklist-actions{display:flex;flex-wrap:wrap;align-items:center;gap:15px}.checklist-actions .text-link{width:100%;margin:0}.checklist-download{font-size:13px;text-decoration:underline;text-underline-offset:4px}.checklist-download:hover{color:#276b59}.checklist-page{max-width:1000px;margin:auto}.checklist-page h1{font-size:54px}.checklist-page h2{font-size:32px}.checklist-notice{padding:20px;background:#eef1e6;border-left:4px solid #276b59}.checklist-page .place-choice{font-size:15px}.checklist-page input[type=checkbox]{flex-shrink:0}
+.destination-card:focus-visible,.service-card:focus-within,.visa-card:focus-within,.service-row>a:focus-visible{box-shadow:0 8px 25px #153e3c22}
+@media(hover:hover) and (pointer:fine){nav a:hover{color:#276b59;transform:translateY(-3px) scale(1.06)}nav a.button:hover{background:var(--accent);color:var(--ink);box-shadow:0 6px 15px #153e3c22}.destination-card:hover,.service-card:hover,.visa-card:hover,.service-row>a:hover,.attractions article:hover{transform:translateY(-7px);box-shadow:0 14px 30px #153e3c24}.destination-card:hover img{transform:none}}
+@media(prefers-reduced-motion:reduce){nav a,.destination-card,.destination-card img,.service-card,.visa-card,.service-row>a,.attractions article{transition:none!important;transform:none!important}}
+@media(max-width:650px){.visa-card>img{height:170px}.visa-card>div{padding:15px}.checklist-actions{gap:12px}.checklist-page h1{font-size:42px}}
+/* Separate text hover beneath destination, holiday, visa and service images. */
+:is(.destination-card,.visa-card,.service-card)>div :is(h3,p,small,.text-link,.checklist-download){transform-origin:left center;transition:transform .22s ease,color .22s ease}
+:is(.destination-card,.visa-card,.service-card)>div small{display:inline-block}
+@media(hover:hover) and (pointer:fine){
+:is(.destination-card,.visa-card,.service-card)>div :is(h3,p,small,.text-link,.checklist-download):hover{transform:translateY(-3px) scale(1.035);color:#267864}
+}
+@media(prefers-reduced-motion:reduce){
+:is(.destination-card,.visa-card,.service-card)>div :is(h3,p,small,.text-link,.checklist-download){transition:none!important;transform:none!important}
+}
+
+#purpose-result[hidden]{display:none}#visa-checklist{scroll-margin-top:25px}#purpose-result{margin-top:28px;max-width:960px}#purpose-result .place-choice{font-size:14px}#purpose-result input{flex-shrink:0}#purpose-result details{margin-top:25px}#purpose-result summary{cursor:pointer}#purpose-result .secondary{display:inline-block}
